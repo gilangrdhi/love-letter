@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Envelope from './components/Envelope';
+import LoveConfess from './components/LoveConfess';
+import LoveGallery from './components/LoveGallery';
+import CommitForm from './components/CommitForm';
+import FinalPage from './components/FinalPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Envelope />} />
+        <Route path="/love" element={<LoveConfess />} />
+        <Route path="/gallery" element={<LoveGallery />} />
+        <Route path="/commit" element={<CommitForm />} />
+        <Route path="/final" element={<FinalPage />} />
+      </Routes>
+    </Router>
   );
 }
 
