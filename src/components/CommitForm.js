@@ -23,9 +23,86 @@ export default function CommitForm() {
       setNoSize(noSize * 0.7);
     }
   };
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-pink-100 via-white to-pink-200 overflow-hidden">
+      <AnimatePresence>
+        {showModal && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="relative bg-white rounded-lg shadow-xl p-8 w-[90%] max-w-2xl border-4 border-dashed border-gray-300 font-serif"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 120 }}
+              style={{
+                backgroundImage: `linear-gradient(white 95%, #f3f3f3 5%)`,
+                backgroundSize: `100% 40px`,
+                backgroundRepeat: "repeat-y",
+                lineHeight: "2rem",
+              }}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setShowModal(false)}
+                className="absolute top-2 right-3 text-pink-500 hover:text-pink-700 text-xl"
+                aria-label="Tutup surat"
+              >
+                ✖
+              </button>
+
+              <h2 className="text-2xl font-bold text-pink-700 mb-4 text-center">
+                Untuk kamu yang selalu spesial 💖
+              </h2>
+
+              <div className="overflow-y-auto max-h-[60vh] text-gray-700 text-justify leading-relaxed text-base px-1 space-y-4">
+                <p>
+                  You are my favorite feeling, my constant thought, and the calm
+                  in every storm. ✨
+                </p>
+                <p>
+                  Being with you feels like breathing—natural, necessary, and
+                  something I never want to live without.
+                </p>
+                <p>
+                  You’re the love story I didn’t know I was waiting for. I find
+                  little pieces of you in everything beautiful I see.
+                </p>
+                <p>
+                  I don’t just like you—I deeply admire you, respect you, and
+                  care for you in ways words can barely explain.
+                </p>
+                <p>
+                  Happy Girlfriend Day, sayang. I wrote this not just to express
+                  how much I love you, but to let you know, from the deepest
+                  part of my heart...
+                </p>
+                <p>
+                  I want <strong>you</strong> to be mine, today and always. 💗
+                </p>
+              </div>
+
+              {/* Optional action button
+        <div className="mt-6 text-center">
+          <button
+            onClick={() => setShowModal(false)}
+            className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full shadow-md"
+          >
+            Aku mengerti 🥹
+          </button>
+        </div>
+        */}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Floating Love Particles */}
       <AnimatePresence>
         {showHearts &&
@@ -56,7 +133,7 @@ export default function CommitForm() {
         alt="Cute Romantic GIF"
         className="w-64 h-auto rounded-xl shadow-md mb-6"
       />
-      
+
       <motion.h1
         className="text-4xl md:text-5xl font-bold text-center text-pink-700 mb-4 font-serif"
         initial={{ opacity: 0, y: -20 }}
@@ -65,7 +142,6 @@ export default function CommitForm() {
       >
         🌹 Will You Be My Girlfriend? 🌹
       </motion.h1>
-
 
       <motion.p
         className="text-lg text-pink-600 mb-8"

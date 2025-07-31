@@ -54,7 +54,7 @@ export default function FinalPage() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        💍 Apipii Sayaaang 💍
+        💍 Apipii Assksk 💍
       </motion.h1>
 
       {/* Pesan Cinta */}
@@ -65,8 +65,10 @@ export default function FinalPage() {
         transition={{ delay: 0.5 }}
       >
         Makasih ya udah bilang <span className="font-semibold">“iya”</span>...
-        Hatiku meleleh 🥹💕 Kamu tuh segalanya buat akuuu.
-        Mulai sekarang, yuk kita tulis kisah cinta kita bareng yaa 💖✨
+        AKSKSKSKSK makasii yaa udah nemenin aku tiap malem. Sabar hadepin moodswing dan awasin tiap malem, akuu harap hubungan ini ga bakal selesai  💖✨
+        <br />
+        <br />
+        "Falling in love with you is one of the best things that ever happened in my life."
       </motion.p>
 
       {/* Tanggal */}

@@ -38,13 +38,18 @@ export default function LoveConfess() {
         transition={{ delay: 0.8, duration: 1.2 }}
         className="font-[Lora] text-[17px] sm:text-lg text-gray-800 leading-loose tracking-wide"
       >
-        Aku cuma mau bilang... <br />
-        Terima kasih karena sudah menjadi bagian dari hidupku. Kamu selalu
-        hadir dengan senyum dan perhatian yang hangat.
+        Halooo sayangku cintaku maniskuu <br />
+        Selamat Hari Pacar untuk perempuan paling berharga dalam hidupku. Kamu
+        adalah alasan aku menjadi lebih lembut, lebih sabar, dan lebih percaya
+        bahwa cinta bukan sekadar rasa tapi pilihan yang diperjuangkan setiap
+        hari. Terima kasih sudah menemaniku di saat baik maupun buruk. Cintamu
+        bukan hanya membuatku bahagia, tapi juga membuatku ingin jadi versi
+        terbaik dari diriku.
         <br />
         <br />
-        Aku ingin kita terus bersama — bukan cuma hari ini,
-        tapi <span className="text-pink-500 font-semibold">selamanya</span>.
+        Aku ingin kita terus bersama — bukan cuma hari ini, tapi{" "}
+        <span className="text-pink-500 font-semibold">selamanya</span>.
+        <br />
       </motion.p>
 
       <motion.div

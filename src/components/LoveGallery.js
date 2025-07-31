@@ -20,16 +20,60 @@ const photos = [
   "/img/us16.png",
 ];
 
+const captions = [
+  "Waktu pertama kali kita jalan bareng 💖",
+  "Ketawa kamu bikin hariku cerah 🤭",
+  "Liat kamu dari jauh aja udah bahagia 🥺",
+  "Momen candid yang ngangenin 🫶",
+  "Pas kita ngobrol lama banget 😳",
+  "Gaya kamu waktu malu-malu lucu banget 😆",
+  "Kita di taman, senyum kamu manis banget 🍃",
+  "Hari itu spesial banget buatku 💘",
+  "Tatapan matamu ga pernah bohong 😚",
+  "Aku suka banget foto ini! 💓",
+  "Kamu bener-bener lucu di sini 🤍",
+  "Pas aku sadar aku suka kamu 🥹",
+  "Semoga kita bisa terus bareng 🥰",
+  "Foto random tapi priceless ✨",
+  "Kalau liat ini aku senyum sendiri 🤭",
+  "Foto paling aku sayangin 💞",
+];
+
 export default function LoveGallery() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-white to-pink-200 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-white to-pink-200 flex items-center justify-center px-4 relative overflow-hidden">
+      {/* Floating sparkles / memory dust */}
+      <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+        {[...Array(25)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1.5 h-1.5 bg-pink-200 rounded-full opacity-60 blur-sm"
+            initial={{
+              x: Math.random() * window.innerWidth,
+              y: Math.random() * window.innerHeight,
+              scale: 0.5 + Math.random(),
+            }}
+            animate={{
+              y: [-20, -60],
+              opacity: [0.4, 0.8, 0],
+            }}
+            transition={{
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 6 + Math.random() * 4,
+              delay: Math.random() * 4,
+            }}
+          />
+        ))}
+      </div>
+
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative bg-white/90 backdrop-blur-sm max-w-md w-full text-center p-6 rounded-3xl border-[2px] border-pink-200 shadow-lg"
+        className="relative bg-white/90 backdrop-blur-sm max-w-md w-full text-center p-6 rounded-3xl border-[2px] border-pink-200 shadow-lg z-20"
       >
         {/* Border glow */}
         <motion.div
@@ -47,6 +91,7 @@ export default function LoveGallery() {
         >
           Our Love Gallery 💞
         </motion.h1>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -56,7 +101,7 @@ export default function LoveGallery() {
           Beberapa momen paling manis yang kita lalui bareng 💖
         </motion.p>
 
-        {/* Grid Photo Gallery */}
+        {/* Grid Gallery */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -66,23 +111,26 @@ export default function LoveGallery() {
           {photos.map((src, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.05 }}
               whileHover={{ scale: 1.05, rotate: 1 }}
               whileTap={{ scale: 0.95 }}
-              className="aspect-square rounded-xl overflow-hidden shadow"
+              className="bg-white aspect-square rounded-xl shadow p-1 flex flex-col items-center"
             >
               <img
                 src={src}
-                alt={`Kenangan bersama Apipii ke-${i + 1}`}
-                className="w-full h-full object-cover"
+                alt={`Kenangan bersama ke-${i + 1}`}
+                className="w-full h-full object-cover rounded"
               />
+              <p className="text-[10px] text-center italic text-pink-400 mt-1">
+                {captions[i] || "Momen spesial ❤️"}
+              </p>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Button Next */}
+        {/* Next Button */}
         <motion.button
           onClick={() => navigate("/commit")}
           whileHover={{ scale: 1.05 }}
