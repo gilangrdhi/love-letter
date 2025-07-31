@@ -20,7 +20,7 @@ export default function Envelope() {
   };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-pink-100 overflow-hidden">
+    <div className="relative flex items-center justify-center min-h-screen bg-pink-100 overflow-hidden p-4">
       <AnimatePresence>
         {!opened && (
           <>
@@ -42,7 +42,7 @@ export default function Envelope() {
               className="cursor-pointer z-10"
             >
               {/* Amplop */}
-              <div className="relative w-64 h-40">
+              <div className="relative w-52 h-36 sm:w-64 sm:h-40">
                 {/* Badan amplop */}
                 <div className="absolute inset-0 bg-red-400 rounded-md shadow-xl z-10"></div>
 
@@ -65,7 +65,7 @@ export default function Envelope() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 1 }}
-              className="absolute bottom-20 text-center text-sm text-pink-700 font-semibold animate-bounce"
+              className="absolute bottom-10 sm:bottom-20 text-center text-sm sm:text-base text-pink-700 font-semibold animate-bounce px-2"
             >
               Psst... sayang, klik amplop ini ya! 💕
             </motion.div>

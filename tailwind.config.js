@@ -5,8 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         serif: ['"DM Serif Display"', "serif"],
-        lora: ['"Lora"', "serif"],
-        cursive: ['"Dancing Script"', 'cursive'],
+        greatvibes: ['"Great Vibes"', "cursive"],
+        lora: ["Lora", "serif"],
+        dancingscript: ['"Dancing Script"', "cursive"],
+        cursive: ['"Dancing Script"', "cursive"],
       },
     },
   },
