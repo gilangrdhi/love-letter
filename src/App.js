@@ -4,10 +4,12 @@ import LoveConfess from './components/LoveConfess';
 import LoveGallery from './components/LoveGallery';
 import CommitForm from './components/CommitForm';
 import FinalPage from './components/FinalPage';
+import BackgroundMusic from './components/BackgroundMusic';
 
 function App() {
   return (
     <Router>
+      <BackgroundMusic /> 
       <Routes>
         <Route path="/" element={<Envelope />} />
         <Route path="/love" element={<LoveConfess />} />
