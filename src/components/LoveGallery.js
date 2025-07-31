@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const photos = [
   "/img/us1.jpg",
@@ -41,18 +42,31 @@ const captions = [
 
 export default function LoveGallery() {
   const navigate = useNavigate();
+  const [windowSize, setWindowSize] = useState({ width: 360, height: 640 });
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+  }, []);
+
+  const randomX = () => Math.random() * windowSize.width;
+  const randomY = () => Math.random() * windowSize.height;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-white to-pink-200 flex items-center justify-center px-4 relative overflow-hidden">
-      {/* Floating sparkles / memory dust */}
+      {/* Floating sparkles */}
       <div className="absolute inset-0 pointer-events-none z-10 overflow-hidden">
         {[...Array(25)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1.5 h-1.5 bg-pink-200 rounded-full opacity-60 blur-sm"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: randomX(),
+              y: randomY(),
               scale: 0.5 + Math.random(),
             }}
             animate={{
@@ -69,11 +83,12 @@ export default function LoveGallery() {
         ))}
       </div>
 
+      {/* Gallery Card */}
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative bg-white/90 backdrop-blur-sm max-w-md w-full text-center p-6 rounded-3xl border-[2px] border-pink-200 shadow-lg z-20"
+        className="relative bg-white/90 backdrop-blur-sm w-full max-w-[90vw] sm:max-w-md text-center p-4 sm:p-6 rounded-3xl border-[2px] border-pink-200 shadow-lg z-20"
       >
         {/* Border glow */}
         <motion.div
@@ -83,9 +98,10 @@ export default function LoveGallery() {
           className="absolute inset-0 rounded-3xl border border-pink-300 pointer-events-none"
         />
 
+        {/* Title */}
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 1, rotate: [0, -1, 1, 0] }}
           transition={{ delay: 0.3, duration: 1 }}
           className="text-3xl font-serif text-pink-700 mb-2"
         >
@@ -101,12 +117,12 @@ export default function LoveGallery() {
           Beberapa momen paling manis yang kita lalui bareng 💖
         </motion.p>
 
-        {/* Grid Gallery */}
+        {/* Grid of Photos */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="grid grid-cols-2 gap-3 max-h-[420px] overflow-y-auto mb-4 scrollbar-thin scrollbar-thumb-pink-300 pr-1"
+          className="grid grid-cols-2 gap-2 sm:gap-3 max-h-[420px] overflow-y-auto mb-4 scrollbar-thin scrollbar-thumb-pink-300 pr-1"
         >
           {photos.map((src, i) => (
             <motion.div
@@ -120,10 +136,10 @@ export default function LoveGallery() {
             >
               <img
                 src={src}
-                alt={`Kenangan bersama ke-${i + 1}`}
+                alt={`Kenangan ke-${i + 1}`}
                 className="w-full h-full object-cover rounded"
               />
-              <p className="text-[10px] text-center italic text-pink-400 mt-1">
+              <p className="text-[10px] sm:text-xs text-center italic text-pink-400 mt-1">
                 {captions[i] || "Momen spesial ❤️"}
               </p>
             </motion.div>
@@ -135,7 +151,7 @@ export default function LoveGallery() {
           onClick={() => navigate("/commit")}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-2 bg-pink-500 text-white px-6 py-2 rounded-full shadow hover:bg-pink-600 transition"
+          className="mt-2 bg-pink-500 text-white px-6 py-2 rounded-full shadow hover:bg-pink-600 transition text-sm sm:text-base"
         >
           ❤️ Lanjut...
         </motion.button>

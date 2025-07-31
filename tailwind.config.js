@@ -9,8 +9,9 @@ module.exports = {
         lora: ["Lora", "serif"],
         dancingscript: ['"Dancing Script"', "cursive"],
         cursive: ['"Dancing Script"', "cursive"],
+        sans: ['Poppins', 'sans-serif'],
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

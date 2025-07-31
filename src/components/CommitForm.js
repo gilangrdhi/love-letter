@@ -62,12 +62,33 @@ export default function CommitForm() {
               </h2>
 
               <div className="text-sm sm:text-base text-gray-700 text-justify leading-relaxed px-1 space-y-4">
-                <p>Dari semua hal indah yang pernah aku temui dalam hidup... kamu adalah yang paling aku syukuri. 🌷</p>
-                <p>Setiap detik bersamamu bikin dunia terasa lebih hangat. Tawa kamu, cara kamu lihat aku, semua itu terasa seperti rumah—tenang dan tulus.</p>
-                <p>Aku nggak cuma suka kamu, aku mengagumimu. Dari cara kamu berpikir, sampai hal-hal kecil yang mungkin nggak kamu sadari, semua itu bikin aku jatuh cinta setiap hari.</p>
-                <p>Kamu bukan hanya seseorang yang aku sayang. Kamu adalah alasan kenapa aku ingin jadi versi terbaik dari diriku sendiri.</p>
-                <p>Di hari spesial ini, aku cuma mau bilang: kamu itu anugerah. Dan kalau kamu mau, aku ingin jalanin hari-hari ke depan... bareng kamu. 💫</p>
-                <p>I want <strong>you</strong> to be mine — today, tomorrow, and always. 💗</p>
+                <p>
+                  Dari semua hal indah yang pernah aku temui dalam hidup... kamu
+                  adalah yang paling aku syukuri. 🌷
+                </p>
+                <p>
+                  Setiap detik bersamamu bikin dunia terasa lebih hangat. Tawa
+                  kamu, cara kamu lihat aku, semua itu terasa seperti
+                  rumah—tenang dan tulus.
+                </p>
+                <p>
+                  Aku nggak cuma suka kamu, aku mengagumimu. Dari cara kamu
+                  berpikir, sampai hal-hal kecil yang mungkin nggak kamu sadari,
+                  semua itu bikin aku jatuh cinta setiap hari.
+                </p>
+                <p>
+                  Kamu bukan hanya seseorang yang aku sayang. Kamu adalah alasan
+                  kenapa aku ingin jadi versi terbaik dari diriku sendiri.
+                </p>
+                <p>
+                  Di hari spesial ini, aku cuma mau bilang: kamu itu anugerah.
+                  Dan kalau kamu mau, aku ingin jalanin hari-hari ke depan...
+                  bareng kamu. 💫
+                </p>
+                <p>
+                  I want <strong>you</strong> to be mine — today, tomorrow, and
+                  always. 💗
+                </p>
               </div>
             </motion.div>
           </motion.div>
@@ -105,14 +126,16 @@ export default function CommitForm() {
         className="w-48 sm:w-64 h-auto rounded-xl shadow-md mb-6"
       />
 
-      <motion.h1
-        className="text-3xl sm:text-5xl font-bold text-center text-pink-700 mb-4 font-serif"
+      <motion.div
+        className="flex items-center justify-center gap-2 sm:gap-4 mb-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        🌹 Will You Be My Girlfriend? 🌹
-      </motion.h1>
+        <h1 className="text-3xl sm:text-5xl font-bold text-pink-700 text-center font-serif">
+          Will You Be My Girlfriend?
+        </h1>
+      </motion.div>
 
       <motion.p
         className="text-base sm:text-lg text-pink-600 mb-8 text-center"
