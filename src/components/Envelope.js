@@ -23,41 +23,53 @@ export default function Envelope() {
     <div className="relative flex items-center justify-center min-h-screen bg-pink-100 overflow-hidden">
       <AnimatePresence>
         {!opened && (
-          <motion.div
-            key="envelope"
-            onClick={handleOpen}
-            initial={{ scale: 0 }}
-            animate={{
-              scale: 1,
-              rotate: flipping ? 0 : [0, 5, -5, 0],
-            }}
-            exit={{ opacity: 0, scale: 1.1 }}
-            transition={{
-              duration: 0.6,
-              repeat: flipping ? 0 : Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-            className="cursor-pointer z-10"
-          >
-            {/* Amplop */}
-            <div className="relative w-64 h-40">
-              {/* Badan amplop */}
-              <div className="absolute inset-0 bg-red-400 rounded-md shadow-xl z-10"></div>
+          <>
+            <motion.div
+              key="envelope"
+              onClick={handleOpen}
+              initial={{ scale: 0 }}
+              animate={{
+                scale: 1,
+                rotate: flipping ? 0 : [0, 5, -5, 0],
+              }}
+              exit={{ opacity: 0, scale: 1.1 }}
+              transition={{
+                duration: 0.6,
+                repeat: flipping ? 0 : Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              }}
+              className="cursor-pointer z-10"
+            >
+              {/* Amplop */}
+              <div className="relative w-64 h-40">
+                {/* Badan amplop */}
+                <div className="absolute inset-0 bg-red-400 rounded-md shadow-xl z-10"></div>
 
-              {/* Tutup amplop */}
-              <motion.div
-                initial={{ rotateX: 0 }}
-                animate={{ rotateX: flipping ? -140 : 0 }}
-                transition={{ duration: 1.1, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-full h-1/2 bg-red-300 origin-bottom clip-triangle z-20"
-                style={{
-                  transformStyle: "preserve-3d",
-                  backfaceVisibility: "hidden",
-                }}
-              />
-            </div>
-          </motion.div>
+                {/* Tutup amplop */}
+                <motion.div
+                  initial={{ rotateX: 0 }}
+                  animate={{ rotateX: flipping ? -140 : 0 }}
+                  transition={{ duration: 1.1, ease: "easeInOut" }}
+                  className="absolute top-0 left-0 w-full h-1/2 bg-red-300 origin-bottom clip-triangle z-20"
+                  style={{
+                    transformStyle: "preserve-3d",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+              </div>
+            </motion.div>
+
+            {/* Teks imut di bawah amplop */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 1 }}
+              className="absolute bottom-20 text-center text-sm text-pink-700 font-semibold animate-bounce"
+            >
+              Psst... sayang, klik amplop ini ya! 💕
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
 

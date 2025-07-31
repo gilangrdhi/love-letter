@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         serif: ['"DM Serif Display"', "serif"],
         lora: ['"Lora"', "serif"],
+        cursive: ['"Dancing Script"', 'cursive'],
       },
     },
   },

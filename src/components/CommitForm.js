@@ -57,34 +57,37 @@ export default function CommitForm() {
                 ✖
               </button>
 
-              <h2 className="text-2xl font-bold text-pink-700 mb-4 text-center">
+              <h2 className="text-2xl font-bold text-pink-700 mb-4 text-center font-cursive">
                 Untuk kamu yang selalu spesial 💖
               </h2>
 
               <div className="overflow-y-auto max-h-[60vh] text-gray-700 text-justify leading-relaxed text-base px-1 space-y-4">
                 <p>
-                  You are my favorite feeling, my constant thought, and the calm
-                  in every storm. ✨
+                  Dari semua hal indah yang pernah aku temui dalam hidup... kamu
+                  adalah yang paling aku syukuri. 🌷
                 </p>
                 <p>
-                  Being with you feels like breathing—natural, necessary, and
-                  something I never want to live without.
+                  Setiap detik bersamamu bikin dunia terasa lebih hangat. Tawa
+                  kamu, cara kamu lihat aku, semua itu terasa seperti
+                  rumah—tenang dan tulus.
                 </p>
                 <p>
-                  You’re the love story I didn’t know I was waiting for. I find
-                  little pieces of you in everything beautiful I see.
+                  Aku nggak cuma suka kamu, aku mengagumimu. Dari cara kamu
+                  berpikir, sampai hal-hal kecil yang mungkin nggak kamu sadari,
+                  semua itu bikin aku jatuh cinta setiap hari.
                 </p>
                 <p>
-                  I don’t just like you—I deeply admire you, respect you, and
-                  care for you in ways words can barely explain.
+                  Kamu bukan hanya seseorang yang aku sayang. Kamu adalah alasan
+                  kenapa aku ingin jadi versi terbaik dari diriku sendiri.
                 </p>
                 <p>
-                  Happy Girlfriend Day, sayang. I wrote this not just to express
-                  how much I love you, but to let you know, from the deepest
-                  part of my heart...
+                  Di hari spesial ini, aku cuma mau bilang: kamu itu anugerah.
+                  Dan kalau kamu mau, aku ingin jalanin hari-hari ke depan...
+                  bareng kamu. 💫
                 </p>
                 <p>
-                  I want <strong>you</strong> to be mine, today and always. 💗
+                  I want <strong>you</strong> to be mine — today, tomorrow, and
+                  always. 💗
                 </p>
               </div>
 
